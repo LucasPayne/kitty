@@ -1,1 +1,1 @@
-bash transmit.sh /home/lucas/drive/images/lucasgamer_skamtebord.png
+bash transmit.sh /home/lucas/drive/images/Untitled.png

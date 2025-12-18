@@ -5,9 +5,31 @@ cols=20
 tmux_passthrough=0
 screen_passthrough=0
 vim_passthrough=0
-kitty_remote_passthrough=1
-
+kitty_remote_passthrough=0
 skip_image=0
+
+mode="$1"
+shift
+if [ "$mode" = "tmux" ]
+then
+    tmux_passthrough=1
+fi
+if [ "$mode" = "screen" ]
+then
+    screen_passthrough=1
+fi
+if [ "$mode" = "vim" ]
+then
+    vim_passthrough=1
+fi
+if [ "$mode" = "kitty" ]
+then
+    kitty_remote_passthrough=1
+fi
+if [ "$mode" = "skip" ]
+then
+    skip_image=1
+fi
 
 if [ $skip_image -eq 0 ]
 then

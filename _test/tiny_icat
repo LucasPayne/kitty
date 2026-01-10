@@ -1,0 +1,16 @@
+# https://github.com/kovidgoyal/kitty/discussions/6574
+
+# Max chunk size: 4096
+
+function icat() {
+  convert "${1:-}" png:- |
+  base64 -w4096 - |
+  sed -e '
+    $!s/^/m=1;/;
+    $ s/^/m=0;/;
+    1 s/^/a=T,f=100,t=d,/;
+    ' -e "s/^/\x1B_G/; s/$/\x1B\\\\/" |
+  tr -d '\n'
+}
+
+icat "$@"

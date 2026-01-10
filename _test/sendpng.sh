@@ -178,6 +178,9 @@ EOF
 
 for i in $(seq 1 $rows)
 do
+    # Test breaking up the image
+    # printf '%*s' "$i"
+
     printf "\e[38;5;${ID}m"
     for j in $(seq 1 $cols)
     do
